@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="content-security-policy|content-type|default-style|refresh">
+      <link rel="stylesheet" class="text/css" href="css/style.css">
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ 
+      <script src="js/style.js"></script>
+      </head>
+
+
+<style>
+    h1 {
+          margin: 30px;
+          padding: 25px;
+          background: brown;
+          color: #fff;
+        }
+        body {
+  font-family: montserrat;
+}
+.hamburger-oppened {
+   position: grid;
+   max-width: 100%;
+  
+}
+nav {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  background: #34495e;
+}
+label.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  padding: 0 100px;
+  line-height: 80px;
+  font-family: cursive;
+}
+nav ul {
+  float: right;
+  margin-right: 40px;
+  z-index: 999;
+}
+nav li {
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+nav a {
+   color: white;
+   font-size: 18px;
+   text-transform: uppercase;
+   border: 1px solid transparent;
+   padding: 7px 10px;
+   border-radius: 3px;
+}
+a.active,a:hover {
+  transition: .5s;
+  border: 1px solid white;
+  
+}
+nav #icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  line-height: 80px;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width:1024px) {
+  label.logo{
+    font-size: 32px;
+    padding-left: 60px;
+  }
+  nav ul {
+    margin-right: 20px;
+  }
+  nav a{
+    font-size: 17px;
+  }
+}
+@media (max-width:909px){
+  nav #icon{
+    display: block;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2f3640;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav a {
+    font-size: 20px;
+  }
+  a.active,a:hover {
+    border: none;
+    color: #3498db;
+  }
+  nav ul.show {
+    left: 0;
+  }
+}
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          .row > .column {
+            padding: 0 8px;
+          }
+          
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          
+          .column {
+            float: left;
+            width: 25%;
+          }
+          
+          /* The Modal (background) */
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+          }
+          
+          /* Modal Content */
+          .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+          }
+          
+          /* The Close Button */
+          .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+          }
+          
+          .mySlides {
+            display: none;
+          }
+          
+          .cursor {
+            cursor: pointer;
+          }
+          
+          /* Next & previous buttons */
+          .prev,
+          .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+          }
+          
+          /* Position the "next button" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+          
+          /* On hover, add a black background color with a little bit see-through */
+          .prev:hover,
+          .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+          
+          /* Number text (1/3 etc) */
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+          
+          img {
+            margin-bottom: -4px;
+          }
+          
+          .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+          }
+          
+          .demo {
+            opacity: 0.6;
+          }
+          
+          .active,
+          .demo:hover {
+            opacity: 1;
+          }
+          
+          img.hover-shadow {
+            transition: 0.3s;
+          }
+          
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+          /* Footer */
+footer {
+  display: inline-block;
+  margin: 15px;
+  bottom: 0px;
+  width: 100%;
+  background:#34495e;
+  color: #fff;
+}
+.main-content {
+  display: flex;
+}
+.main-content .box {
+  flex-basis: 50;
+  padding: 10px 20px;
+}
+.box h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content {
+  margin: 20px 0 0 0;
+}
+.box .content p {
+  text-align: justify;
+}
+.left .content .social {
+  margin: 20px 0 0 0;
+}
+.left .content .social a {
+  padding: 0 2px;
+}
+.left .content .social a span {
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width:400px) {
+  .main-navigation {
+      display: none;
+  }
+}
+footer {
+    margin: 0;
+  }
+
+  footer .main-content {
+    flex-direction: column;
+  }
+
+@media only screen and (max-width:700px) and (orientation:landscape) {
+  .main-navigation {
+      display: none;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .hamburger {
+      display: inline-block;
+  }
+ } 
+          </style>
+          <body>
+            <nav>
+              <label class="logo">Мебел Стил</label>
+            <ul>
+              <li><a href="index.html">Начало</a></li>
+              <li><a href="index.zanas.html">За нас</a></li>
+              <li><a href="index.galeria.html.html">Мебели</a></li>
+              <li><a href="index.contact.html">Контакти</a></li>
+              <li><a href="#">Блог</a></li>
+            </ul>
+          </label>
+            </nav>
+          
+          <h1><center>Спални</center></h1>
+          <hr>
+          
+          <div class="row">
+            <div class="column">
+              <img src="img/spalni/16.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="img/spalni/17.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="img/spalni/18.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="img/spalni/19.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+            <hr>
+            <div class="column">
+                <img src="img/spalni/20.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="img/spalni/21.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="img/spalni/22.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="img/spalni/23.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+              </div>
+              <hr>
+              <div class="column">
+                <img src="img/spalni/24.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="img/spalni/25.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="img/spalni/26.jpg" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                  <img src="img/spalni/27.jpg" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+                </div>
+          </div>
+          
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 12</div>
+                <img src="img/spalni/16.jpg" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">2 / 12</div>
+                <img src="img/spalni/17.jpg" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">3 / 12</div>
+                <img src="img/spalni/18.jpg" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">4 / 12</div>
+                <img src="img/spalni/19.jpg" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">5 / 12</div>
+                <img src="img/spalni/20.jpg" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">6 / 12</div>
+                <img src="img/spalni/21.jpg" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">7 / 12</div>
+                <img src="img/spalni/22.jpg" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">8 / 12</div>
+                <img src="img/spalni/23.jpg" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">9 / 12</div>
+                <img src="img/spalni/24.jpg" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">10 / 12</div>
+                <img src="img/spalni/25.jpg" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">11 / 12</div>
+                <img src="img/spalni/26.jpg" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">12 / 12</div>
+                <img src="img/spalni/27.jpg" style="width:100%">
+              </div>
+             
+              
+              
+              
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/16.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/17.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/18.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/19.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/20.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/kuhni/21.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/22.jpg" style="width:100%" onclick="currentSlide(7)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/23.jpg" style="width:100%" onclick="currentSlide(8)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/24.jpg" style="width:100%" onclick="currentSlide(9)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/25.jpg" style="width:100%" onclick="currentSlide(10)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/26.jpg" style="width:100%" onclick="currentSlide(11)" alt="">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="img/spalni/27." style="width:100%" onclick="currentSlide(12)" alt="">
+              </div>
+            </div>
+          </div>
+  
+          </body>
+          </html>
+          
+          <script>
+          function openModal() {
+            document.getElementById("myModal").style.display = "block";
+          }
+          
+          function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+          }
+          
+          var slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+          }
+          </script>
+
+          
+                <!-- Footer -->
+<footer>
+  <div class="main-content">
+      <div class="left box">
+          <h2>За нас</h2>
+          <div class="content">
+              <p>Мебел Стил е компания за производство на мебели, чиито артикули могат да бъдат характеризирани като уникални.Ние предлагаме безпроблемно обновяване с квалифицирани експерти. </p>
+                  <div class="social">
+                   <a href="#"><span class="fab fa-facebook-f"></span></a>
+                   <a href="#"><span class="fab fa-twitter"></span></a>
+                   <a href="#"><span class="fab fa-instagram"></span></a>
+                   <a href="#"><span class="fab fa-youtube"></span></a>
+              </div>
+          </div>
+      </div>
+  
+        <div class="center box">
+         <h2>Address</h2>
+         <div class="content">
+             <div class="place">
+                 <span class="fas fa-map-marker-alt"></span>
+                 <span class="text">Sofiq,Bulgaria</span>
+             </div>
+             <div class="phone">
+                 <span class="fas fa-phone-alt"></span>
+                 <span class="text">359877850824</span>
+             </div>
+             <div class="email">
+                 <span class="fas fa-encelope"></span>
+                 <span class="text">mebelStil2020@gmail.com</span>
+             </div>
+         </div>
+     </div>
+     <div class="right box">
+       <h2>Contact us</h2>
+       <div class="content">
+           <form action="#">
+               <div class="email">
+                   <div class="text">Email *</div>
+                   <input type="email" required>
+               </div>
+               <div class="msg">
+                   <div class="text">Massage *</div>
+                       <textarea rows="2" cols="25" required></textarea>
+                   </div>
+                   <div class="btn">
+                       <button type="sumit">Send</button>
+                   </div>
+               </div>
+           </form>
+       </div>
+     </div>
+     
+
+
+</footer>
+</body>
+</html>

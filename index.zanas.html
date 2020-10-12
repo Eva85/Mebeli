@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="content-security-policy|content-type|default-style|refresh">
+      <link rel="stylesheet" class="text/css" href="css/style.css">
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ 
+      <script src="js/style.js"></script>
+      </head>
+      <style>
+        .hamburger-oppened {
+         position: grid;
+         max-width: 100%;
+  
+}
+h1 {
+ margin: 25px;
+ padding: 30px;
+ background-color: brown;
+   color: white;
+   }
+          .right-text{
+           background:#fff;
+           color: #000;
+           box-shadow: 30px;
+           display: inline-block;
+           margin: 30px;
+           padding: 45px;
+          }
+          h3 {
+              margin: 25px;
+              padding: 30px;
+              background-color: brown;
+              color: white;
+          }
+          /* Slider */
+          .container{
+	width:700px;
+	margin:50px auto;
+	overflow:auto;
+}
+
+.slider-inner{
+	width:600px;
+	height:400px;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+	border:#666 solid 1px;
+}
+
+.slider-inner img{
+	display:none;
+	width:600px;
+	height:400px;
+}
+
+.slider-inner img.active{
+	display:inline-block;
+}
+
+.prev,.next{
+	float:left;
+	margin-top:130px;
+	cursor: pointer;
+}
+
+.prev{
+	position:relative;
+	margin-right:-45px;
+	z-index:100;
+}
+      </style>
+      <script>
+     /* Hamburger */
+$(document).ready(function(){
+    $('#icon').click(function(){
+     $('ul').toggleClass('show');
+     if($('body').hasClass('hamburger-oppened')){
+        $('body').removeClass('hamburger-oppened');
+    } else {
+        $('body').addClass('hamburger-oppened');
+    }
+    });
+    
+});
+
+
+  /* Slider */
+          $(document).ready(function(){
+  $('.next').on('click', function(){
+    var currentImg = $('.active');
+    var nextImg = currentImg.next();
+
+    if(nextImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      nextImg.addClass('active').css('z-index', 10);
+    }
+  });
+
+  $('.prev').on('click', function(){
+    var currentImg = $('.active');
+    var prevImg = currentImg.prev();
+
+    if(prevImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      prevImg.addClass('active').css('z-index', 10);
+    }
+  });
+});
+
+          </script>
+      <body>
+        <nav>
+          <label class="logo">Мебел Стил</label>
+        <ul>
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="index.zanas.html">За нас</a></li>
+          <li><a href="index.galeria.html.html">Мебели</a></li>
+          <li><a href="index.contact.html">Контакти</a></li>
+          <li><a href="#">Блог</a></li>
+        </ul>
+        <label id="icon">
+          <i class="fas fa-bars"></i>
+        </label>
+      </nav>
+
+          
+            <center><h1>За нас</h1></center>
+            <hr>
+              <section class="right-text">
+                  <div>
+                    <h2><center>Направи запитване online и получи -5% отстъпка</h2></center>
+                    <hr>
+              <p><em>"Мебел Стил" е фирма, стартирала своята дейност през 2000 г., с една основна цел – да помага на хората да създадат в своя дом уютна, и в същото време и елегантна обстановка.<br>
+                Слагайки на първо място желанията на нашите клиенти, ние постепенно успяхме да обогатим селекцията си от видове обзавеждане. 
+            </p>
+            <p>
+                На база дългогодишния си опит и познания в мебелната индустрия подбрахме европейски партньори от най-утвърдените производители на мебели в модерен и<br> класически стил. Тайната на нашия успех се крие не само в богатото продуктово разнообразие, но и в използването на най-висок клас материали като масивна дървесина, МДФ с естествен фурнир и много други.<br>
+                Производството се извършва в оборудван за целта цех, с материали и механизми на производители от Германия, Австрия, Франция и Италия, всеки от които известен в своята професионална област. Чрез прилагането на иновативни и оригинални технологии, Мебел Стил успява да се наложи като производител и издател на луксозни дизайнерски колекции. Използваните суровини и техники позволяват да предложим на пазара модерни и уникални продукти. Привързани към качество и оригиналност, подкрепени от опита, продължаваме да търсим нови решения.
+
+                 <br>Накратко Мебел Стил е идея, смелост и креативност!</em>
+            </p>
+        </div>
+    </section>
+
+     <center><h3>РАБОТНА СРЕДА</h3></center>
+     <hr>
+     <p>Нашите хора! Винаги сме работили със собствени дизайнери, дърводелци, занаятчии и монтажници. Държим всеки в екипа да покрие и защити най-високите стандарти. Докато технологиите, оборудването и дизайнерските концепции се променят с течение на времето, ние следваме този процес, слушаме, учим се, правим го успешно, правим го навреме и това никога няма да се промени.
+
+        Ние като производители гарантираме за безупречното качество на материалите и продукта с марка Мебел Стил.
+    </p>
+    <div class="container">
+        <div class="slider-outer">
+          <img src="img/arrow-left.png" class="prev" alt="Prev">
+          <div class="slider-inner">
+            <img src="img/1.rabota.jpg" class="active">
+            <img src="img/2.rabota.jpg">
+            <img src="img/3.rabota.jpg">
+          </div>
+          <img src="img/arrow-right.png" class="next" alt="Next">
+        </div>
+      </div>
+  
+  
+
+
+
+
+
+
+        <!-- Footer -->
+<footer>
+    <div class="main-content">
+        <div class="left box">
+            <h2>За нас</h2>
+            <div class="content">
+                <p>Мебел Стил е компания за производство на мебели, чиито артикули могат да бъдат характеризирани като уникални.Ние предлагаме безпроблемно обновяване с квалифицирани експерти. </p>
+                    <div class="social">
+                     <a href="#"><span class="fab fa-facebook-f"></span></a>
+                     <a href="#"><span class="fab fa-twitter"></span></a>
+                     <a href="#"><span class="fab fa-instagram"></span></a>
+                     <a href="#"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+        </div>
+    
+          <div class="center box">
+           <h2>Address</h2>
+           <div class="content">
+               <div class="place">
+                   <span class="fas fa-map-marker-alt"></span>
+                   <span class="text">Sofiq,Bulgaria</span>
+               </div>
+               <div class="phone">
+                   <span class="fas fa-phone-alt"></span>
+                   <span class="text">359877850824</span>
+               </div>
+               <div class="email">
+                   <span class="fas fa-encelope"></span>
+                   <span class="text">mebelStil2020@gmail.com</span>
+               </div>
+           </div>
+       </div>
+       <div class="right box">
+         <h2>Contact us</h2>
+         <div class="content">
+             <form action="#">
+                 <div class="email">
+                     <div class="text">Email *</div>
+                     <input type="email" required>
+                 </div>
+                 <div class="msg">
+                     <div class="text">Massage *</div>
+                         <textarea rows="2" cols="25" required></textarea>
+                     </div>
+                     <div class="btn">
+                         <button type="sumit">Send</button>
+                     </div>
+                 </div>
+             </form>
+         </div>
+       </div>
+       
+  
+  
+  </footer>
+</body>
+</html>  

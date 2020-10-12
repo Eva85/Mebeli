@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="content-security-policy|content-type|default-style|refresh">
+      <link rel="stylesheet" class="text/css" href="css/style.css">
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ 
+      <script src="js/style.js"></script>
+      
+        <title>Mebel Stil</title> 
+    </head>
+
+
+
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	align-items: center;
+	background: #fff;
+	font-family: 'Poppins', sans-serif;
+}
+.hamburger-oppened {
+   position: grid;
+   max-width: 100%;
+  
+}
+.contact-in
+{
+	width: 80%;
+	height: auto;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 0px 10px 0px #666;
+}
+.contact-map
+{
+	width: 100%;
+	height: auto;
+	flex: 50%;
+}
+.contact-map iframe
+{
+	width: 100%;
+	height: 100%;
+}
+.contact-form
+{
+	width: 100%;
+	height: auto;
+	flex: 50%;
+	padding: 30px;
+	text-align: center;
+}
+.contact-form h1
+{
+	margin-bottom: 10px;
+}
+
+.contact-form-txt
+{
+	width: 100%;
+	height: 40px;
+	color: #000;
+	border: 1px solid #bcbcbc;
+	border-radius: 50px;
+	outline: none;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+.contact-form-txt::placeholder
+{
+	color: #aaa;
+}
+.contact-form-textarea
+{
+	width: 100%;
+	height: 130px;
+	color: #000;
+	border: 1px solid #bcbcbc;
+	border-radius: 10px;
+	outline: none;
+	margin-bottom: 20px;
+	padding: 15px;
+	font-family: 'Poppins', sans-serif;
+}
+.contact-form-textarea::placeholder
+{
+	color: #aaa;
+}
+
+.contact-form-btn
+{
+	width: 100%;
+	border:none;
+	outline: none;
+	border-radius: 50px;
+	background: #686868;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 0;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+
+@media only screen and (max-width:1024px) {
+  .hamburger {
+      display: inline-block;
+  }
+ } 
+
+</style>
+
+
+<body>
+  <header>
+    <header class="main-header">
+      <div class="wrapper">
+          <div class="hamburger-btn">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+<nav>
+    <label class="logo">Мебел Стил</label>
+    <ul>
+      <li><a class="active" href="index.html">Начало</a></li>
+      <li><a href="index.zanas.html">За нас</a></li>
+      <li><a href="index.galeria.html.html">Мебели</a></li>
+      <li><a href="index.contact.html">Контакти</a></li>
+      <li><a href="#">Блог</a></li>
+    </ul>
+  </label>
+    </nav>
+    </div>
+    </header>
+
+
+
+
+
+<hr>
+<div class="contact-in">
+    <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2930.945176865526!2d23.308839505328113!3d42.726051088944025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LHQuyA0OA!5e0!3m2!1sen!2sbg!4v1599406426392!5m2!1sen!2sbg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="contact-form">
+        <h1>Контакти</h1>
+        <form>
+            <input type="text" placeholder="Име" class="contact-form-txt" />
+            <input type="text" placeholder="Емайл" class="contact-form-txt" />
+            <textarea placeholder="Съобщение" class="contact-form-textarea"></textarea>
+            <input type="submit"  name="Изпращане" class="contact-form-btn" />
+        </form>
+    </div>
+</div>
+<script>
+/* slider */
+$(document).ready(function(){
+    $('.next').on('click', function(){
+      var currentImg = $('.active');
+      var nextImg = currentImg.next();
+  
+      if(nextImg.length){
+        currentImg.removeClass('active').css('z-index', -10);
+        nextImg.addClass('active').css('z-index', 10);
+      }
+    });
+  
+    $('.prev').on('click', function(){
+      var currentImg = $('.active');
+      var prevImg = currentImg.prev();
+  
+      if(prevImg.length){
+        currentImg.removeClass('active').css('z-index', -10);
+        prevImg.addClass('active').css('z-index', 10);
+      }
+    });
+  });
+
+</script>
+ <!-- Footer -->
+ <footer>
+	<div class="main-content">
+		<div class="left box">
+			<h2>За нас</h2>
+			<div class="content">
+				<p>Мебел Стил е компания за производство на мебели, чиито артикули могат да бъдат характеризирани като уникални.Ние предлагаме безпроблемно обновяване с квалифицирани експерти. </p>
+					<div class="social">
+					 <a href="#"><span class="fab fa-facebook-f"></span></a>
+					 <a href="#"><span class="fab fa-twitter"></span></a>
+					 <a href="#"><span class="fab fa-instagram"></span></a>
+					 <a href="#"><span class="fab fa-youtube"></span></a>
+				</div>
+			</div>
+		</div>
+	
+		  <div class="center box">
+		   <h2>Address</h2>
+		   <div class="content">
+			   <div class="place">
+				   <span class="fas fa-map-marker-alt"></span>
+				   <span class="text">Sofiq,Bulgaria</span>
+			   </div>
+			   <div class="phone">
+				   <span class="fas fa-phone-alt"></span>
+				   <span class="text">359877850824</span>
+			   </div>
+			   <div class="email">
+				   <span class="fas fa-encelope"></span>
+				   <span class="text">mebelStil2020@gmail.com</span>
+			   </div>
+		   </div>
+	   </div>
+	   <div class="right box">
+		 <h2>Contact us</h2>
+		 <div class="content">
+			 <form action="#">
+				 <div class="email">
+					 <div class="text">Email *</div>
+					 <input type="email" required>
+				 </div>
+				 <div class="msg">
+					 <div class="text">Massage *</div>
+						 <textarea rows="2" cols="25" required></textarea>
+					 </div>
+					 <div class="btn">
+						 <button type="sumit">Send</button>
+					 </div>
+				 </div>
+			 </form>
+		 </div>
+	   </div>
+	   
+  
+  
+  </footer>
+  
+</body>
+</html>
